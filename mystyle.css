@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+.smoke {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: white;
+  opacity: 0.3;
+  filter: blur(15px);
+  animation: example 2s infinite;
+  transform-origin: bottom;
+}
+.cloud {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: white;
+
+  /* margin: auto; */
+  opacity: 0.3;
+  filter: blur(15px);
+}
+.monk {
+  /* margin: auto; */
+  position: absolute;
+  animation: juggle 2s infinite;
+  left: 48%;
+  /* right: 50%; */
+  z-index: 1;
+  transform-origin: top;
+
+  /* background-color: white; */
+}
+.monk img {
+  width: 120px;
+  height: 160px;
+}
+@keyframes juggle {
+  0% {
+    transform: translateX(0) translateY(10px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(0) translateY(-10px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) translateY(10px) rotate(0deg);
+  }
+}
+
+@keyframes example {
+  0% {
+    opacity: 0.5;
+    filter: blur(50);
+    transform: translateX(0) translateY(0) rotate(0deg);
+    scale: (1);
+  }
+
+  50% {
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(150px);
+    transform: translateX(-300px) translateY(300px);
+    scale: (4);
+  }
+}
