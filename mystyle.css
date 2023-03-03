@@ -81,3 +81,69 @@
     scale: (4);
   }
 }
+
+/*  */
+.display-none {
+  display: none;
+}
+/* .carousel {
+  overflow-x: scroll;
+} */
+.bg-img {
+  color: aliceblue;
+  height: 97vh;
+  /* animation: scroll 1s 1s ease-in-out; */
+  /* animation-duration: 3s;
+  animation-name: slidein; */
+}
+.previous-btn {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translateX(-50%);
+}
+.next-btn {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateX(-50%);
+}
+.previous {
+  transform: translateX(0px);
+  transition: transform 1s ease-in-out 1s;
+}
+/* .next {
+  transform: translateX(0px);
+  transition: transform 1s ease-in-out 1s;
+} */
+/* animation: like 2s 3s infinite; */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-786px);
+  }
+  100% {
+    transform: translateX(-786px);
+  }
+  /* 0% {
+    transform: translateX(-786px);
+  } */
+}
+
+@keyframes slidein {
+  from {
+    margin-left: var(--m, 0%);
+    width: var(--w, 100%);
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
