@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  overflow: hidden;
+}
 .container {
   position: relative;
   display: flex;
@@ -87,7 +90,7 @@
 .bg-img {
   position: relative;
   color: aliceblue;
-  height: 97vh;
+  height: 100vh;
   /* animation: scroll 1s 1s ease-in-out; */
   /* animation-duration: 3s;
   animation-name: slidein; */
@@ -109,24 +112,20 @@ img.bg-img.active {
     left: var(--left-100);
   }
 }
-.previous-btn {
-  color: white;
-  font-size: 24px;
+.btn {
   position: absolute;
   top: 50%;
-  left: 3%;
-  transform: translateX(-50%);
+  transform: translateY(-50%);
+  color: white;
+  font-size: 36px;
+}
+.previous-btn {
+  left: 2vw;
 }
 .next-btn {
-  color: white;
-  font-size: 24px;
-  position: absolute;
-  top: 50%;
-  right: 3%;
-  transform: translateX(-50%);
+  right: 2vw;
 }
 .previous {
-  transform: translateX(0px);
   transition: transform 1s ease-in-out 1s;
 }
 
@@ -138,5 +137,85 @@ img.bg-img.active {
   to {
     margin-left: 0%;
     width: 100%;
+  }
+}
+
+/* Applying Page Navigation */
+.pageNavigation {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.page:last-child {
+  border-right: 2px dotted white;
+}
+.page {
+  border: 2px dotted white;
+  border-right: none;
+  padding: 0 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.active-page {
+  background-color: white;
+}
+.page-0 {
+  padding: 0 10px;
+}
+.page-9 {
+  padding: 0 10px;
+}
+
+.head-text {
+  position: absolute;
+  font-size: 40px;
+  text-decoration: underline;
+  color: white;
+  width: 30vw;
+  word-wrap: normal;
+  line-height: 1.1;
+}
+.top-left {
+  top: 3vh;
+  left: 3vw;
+}
+.center-left {
+  top: 60%;
+  left: 3vw;
+  transform: translateY(-50%);
+}
+.center-right {
+  top: 60%;
+  right: 3vw;
+  transform: translateY(-50%);
+}
+.hide {
+  display: none;
+}
+.hidden {
+  animation: fadeOutAnimation ease 1s;
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.show {
+  animation: fadeInAnimation ease 1s;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
