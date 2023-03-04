@@ -1,14 +1,42 @@
 // Elements
 let textObj = {
-  page0: "WE ARE BEAKEING OUR WOW OF SILENCE",
-  page1: "TELENT IS GIVEN TRUE SKILL IS EARNED",
-  page2: "BE FLEXILE TO CHANGE AND STURDY IN CONVICTION",
-  page3: "USE MANY SKILL YET WORK AS ONE",
-  page4: "TO MASTER ANYTHING FIND INTREST IN EVERYTHING",
-  page5: "INDIVIDULES FLOURISH IS CULTURE AND WISDOM ARE SHARED",
-  page6: "TRAIN FOR PERFECTION BUT AIM FOR MORE",
-  page7: "TAKE PRIDE IN YOUR WORK BUT DO NOT SEEK PRAISE",
-  page8: "TEMPORARY SACRIFISE BRING LASTING RESULTS",
+  page0: {
+    text1: "WE ARE BEAKEING OUR WOW OF SILENCE",
+    text2:
+      "In January 2011, after a decade of digital, we opened the doors to our temple.Follow our nobal eightfold path to digital enlightenment here",
+  },
+  page1: {
+    text1: "TELENT IS GIVEN TRUE SKILL IS EARNED",
+    text2: "Step 1 out of 8 on the path to digital enlightenment.",
+  },
+  page2: {
+    text1: "BE FLEXILE TO CHANGE AND STURDY IN CONVICTION",
+    text2: "Step 2 out of 8 on the path to digital enlightenment.",
+  },
+  page3: {
+    text1: "USE MANY SKILL YET WORK AS ONE",
+    text2: "Step 3 out of 8 on the path to digital enlightenment.",
+  },
+  page4: {
+    text1: "TO MASTER ANYTHING FIND INTREST IN EVERYTHING",
+    text2: "Step 4 out of 8 on the path to digital enlightenment.",
+  },
+  page5: {
+    text1: "INDIVIDULES FLOURISH IS CULTURE AND WISDOM ARE SHARED",
+    text2: "Step 5 out of 8 on the path to digital enlightenment.",
+  },
+  page6: {
+    text1: "TRAIN FOR PERFECTION BUT AIM FOR MORE",
+    text2: "Step 6 out of 8 on the path to digital enlightenment.",
+  },
+  page7: {
+    text1: "TAKE PRIDE IN YOUR WORK BUT DO NOT SEEK PRAISE",
+    text2: "Step 7 out of 8 on the path to digital enlightenment.",
+  },
+  page8: {
+    text1: "TEMPORARY SACRIFISE BRING LASTING RESULTS",
+    text2: "Step 8 out of 8 on the path to digital enlightenment.",
+  },
 };
 let page = 0;
 let container = document.querySelector(".container");
@@ -26,8 +54,11 @@ const myTimeout = setTimeout(myGreeting, 1000);
 function myGreeting() {
   container.classList.add("display-none");
   carousel.classList.remove("display-none");
+  console.log(page);
   document.querySelector(`.text-Page-${page}`).classList.remove("hide");
+  document.querySelector(`.min-text-Page-${page}`).classList.remove("hide");
   document.querySelector(`.text-Page-${page}`).classList.add("show");
+  document.querySelector(`.min-text-Page-${page}`).classList.add("show");
 }
 let backgroundImg = document.querySelector(".bg-img");
 const root = document.documentElement;
@@ -39,15 +70,19 @@ const update = (evt, x) => {
 // Functions Section
 const hideText = function () {
   let headText = document.getElementsByClassName("head-text");
+  let minText = document.getElementsByClassName("min-text");
   Array.from(headText).forEach((e) => {
+    e.classList.add("hide");
+  });
+  Array.from(minText).forEach((e) => {
     e.classList.add("hide");
   });
 };
 const renderText = () => {
-  if (page) {
-    document.querySelector(`.text-Page-${page}`).classList.remove("hide");
-    document.querySelector(`.text-Page-${page}`).classList.add("show");
-  }
+  document.querySelector(`.text-Page-${page}`).classList.remove("hide");
+  document.querySelector(`.min-text-Page-${page}`).classList.remove("hide");
+  document.querySelector(`.text-Page-${page}`).classList.add("show");
+  document.querySelector(`.min-text-Page-${page}`).classList.add("show");
 };
 const previousLogic = function () {
   // write logic of previous button
@@ -144,12 +179,22 @@ document.querySelector(".page-9").addEventListener("click", () => {
   document.querySelector(`.page-${page}`).classList.add("active-page");
 });
 
-document.querySelector(".text-Page-0").textContent = textObj.page0;
-document.querySelector(".text-Page-1").textContent = textObj.page1;
-document.querySelector(".text-Page-2").textContent = textObj.page2;
-document.querySelector(".text-Page-3").textContent = textObj.page3;
-document.querySelector(".text-Page-4").textContent = textObj.page4;
-document.querySelector(".text-Page-5").textContent = textObj.page5;
-document.querySelector(".text-Page-6").textContent = textObj.page6;
-document.querySelector(".text-Page-7").textContent = textObj.page7;
-document.querySelector(".text-Page-8").textContent = textObj.page8;
+document.querySelector(".text-Page-0").textContent = textObj.page0.text1;
+document.querySelector(".text-Page-1").textContent = textObj.page1.text1;
+document.querySelector(".text-Page-2").textContent = textObj.page2.text1;
+document.querySelector(".text-Page-3").textContent = textObj.page3.text1;
+document.querySelector(".text-Page-4").textContent = textObj.page4.text1;
+document.querySelector(".text-Page-5").textContent = textObj.page5.text1;
+document.querySelector(".text-Page-6").textContent = textObj.page6.text1;
+document.querySelector(".text-Page-7").textContent = textObj.page7.text1;
+document.querySelector(".text-Page-8").textContent = textObj.page8.text1;
+
+document.querySelector(".min-text-Page-0").textContent = textObj.page0.text2;
+document.querySelector(".min-text-Page-1").textContent = textObj.page1.text2;
+document.querySelector(".min-text-Page-2").textContent = textObj.page2.text2;
+document.querySelector(".min-text-Page-3").textContent = textObj.page3.text2;
+document.querySelector(".min-text-Page-4").textContent = textObj.page4.text2;
+document.querySelector(".min-text-Page-5").textContent = textObj.page5.text2;
+document.querySelector(".min-text-Page-6").textContent = textObj.page6.text2;
+document.querySelector(".min-text-Page-7").textContent = textObj.page7.text2;
+document.querySelector(".min-text-Page-8").textContent = textObj.page8.text2;

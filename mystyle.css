@@ -5,6 +5,8 @@
 }
 body {
   overflow: hidden;
+  background-color: black;
+  color: white;
 }
 .container {
   position: relative;
@@ -120,10 +122,10 @@ img.bg-img.active {
   font-size: 36px;
 }
 .previous-btn {
-  left: 2vw;
+  left: 1vw;
 }
 .next-btn {
-  right: 2vw;
+  right: 1vw;
 }
 .previous {
   transition: transform 1s ease-in-out 1s;
@@ -144,8 +146,8 @@ img.bg-img.active {
 .pageNavigation {
   display: flex;
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 3vh;
+  left: 3vw;
 }
 .page:last-child {
   border-right: 2px dotted white;
@@ -176,6 +178,13 @@ img.bg-img.active {
   width: 30vw;
   word-wrap: normal;
   line-height: 1.1;
+}
+.min-text {
+  position: absolute;
+  font-size: 10px;
+  color: white;
+  width: 25vw;
+  word-wrap: normal;
 }
 .top-left {
   top: 3vh;
@@ -218,4 +227,41 @@ img.bg-img.active {
   100% {
     opacity: 1;
   }
+}
+
+.mTextBottomLeft {
+  bottom: 10vh;
+  left: 3vw;
+}
+.mTextBottomLeft2 {
+  bottom: 4vh;
+  left: 22vw;
+}
+
+/* Applying Last page-9  */
+.image-contant {
+  display: flex;
+  text-align: end;
+}
+.after-img-content {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  gap: 35vh;
+}
+.after-img-para {
+  margin-bottom: 5vh;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.link {
+  gap: 12px;
+}
+.logo {
+  margin-left: 5px;
 }
