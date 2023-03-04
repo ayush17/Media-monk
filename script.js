@@ -1,5 +1,3 @@
-console.log("Hiii");
-
 // Elements
 let container = document.querySelector(".container");
 let carousel = document.querySelector(".carousel");
@@ -17,14 +15,6 @@ function myGreeting() {
   container.classList.add("display-none");
   carousel.classList.remove("display-none");
 }
-
-let trans = 0;
-
-// Handle Carousel Next/Privious Event Listener
-// previousBtn.addEventListener("click", () => {
-//   console.log("previous");
-//   backgroundImg.style.animation = `scroll 1s linear`;
-// });
 let backgroundImg = document.querySelector(".bg-img");
 const root = document.documentElement;
 const update = (evt, x) => {
@@ -33,7 +23,7 @@ const update = (evt, x) => {
 };
 nextBtn.addEventListener("click", () => {
   const startX = Number(backgroundImg.dataset.x);
-  const endX = startX - 100;
+  const endX = startX - 75;
   root.style.setProperty("--left-0", startX + "%");
   root.style.setProperty("--left-100", endX + "%");
   backgroundImg.removeEventListener("animationend", update);
@@ -41,3 +31,5 @@ nextBtn.addEventListener("click", () => {
   backgroundImg.dataset.x = endX;
   backgroundImg.classList.add("active");
 });
+
+// write logic of previous button

@@ -29,21 +29,15 @@
   height: 150px;
   border-radius: 100%;
   background-color: white;
-
-  /* margin: auto; */
   opacity: 0.3;
   filter: blur(15px);
 }
 .monk {
-  /* margin: auto; */
   position: absolute;
   animation: juggle 2s infinite;
   left: 48%;
-  /* right: 50%; */
   z-index: 1;
   transform-origin: top;
-
-  /* background-color: white; */
 }
 
 .monk img {
@@ -108,17 +102,12 @@ img.bg-img.active {
 }
 @keyframes scroll {
   0% {
-    /* transform: translateX(var(--left-0)); */
     left: var(--left-0);
   }
 
   100% {
     left: var(--left-100);
-    /* transform: translateX(var(--left-100)); */
   }
-  /* 0% {
-      transform: translateX(-786px);
-    } */
 }
 .previous-btn {
   color: white;
@@ -140,11 +129,6 @@ img.bg-img.active {
   transform: translateX(0px);
   transition: transform 1s ease-in-out 1s;
 }
-/* .next {
-  transform: translateX(0px);
-  transition: transform 1s ease-in-out 1s;
-} */
-/* animation: like 2s 3s infinite; */
 
 @keyframes slidein {
   from {
