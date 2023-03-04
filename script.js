@@ -7,7 +7,7 @@ let carousel = document.querySelector(".carousel");
 let smoke = document.querySelector(".smoke");
 let cloud = document.querySelector(".cloud");
 let monk = document.querySelector(".monk");
-let backgroundImg = document.querySelector(".bg-img");
+
 let previousBtn = document.querySelector(".previous-btn");
 let nextBtn = document.querySelector(".next-btn");
 
@@ -25,22 +25,19 @@ let trans = 0;
 //   console.log("previous");
 //   backgroundImg.style.animation = `scroll 1s linear`;
 // });
-
-nextBtn.addEventListener("click", (event) => {
-  //   backgroundImg.style.setProperty("--m", "100%");
-  //   backgroundImg.style.setProperty("--w", "0px");
-  //   backgroundImg.style.animationName = "scroll";
-  //   backgroundImg.style.animation = `scroll 2s ease-in`;
-
-  backgroundImg.scrollLeft -= 500;
+let backgroundImg = document.querySelector(".bg-img");
+const root = document.documentElement;
+const update = (evt, x) => {
+  backgroundImg.classList.remove("active");
+  backgroundImg.style.left = x + "%";
+};
+nextBtn.addEventListener("click", () => {
+  const startX = Number(backgroundImg.dataset.x);
+  const endX = startX - 100;
+  root.style.setProperty("--left-0", startX + "%");
+  root.style.setProperty("--left-100", endX + "%");
+  backgroundImg.removeEventListener("animationend", update);
+  backgroundImg.addEventListener("animationend", (evt) => update(evt, endX));
+  backgroundImg.dataset.x = endX;
+  backgroundImg.classList.add("active");
 });
-// element.addEventListener(
-//   "animationend",
-//   () => {
-//     // Set your final state here. For example:
-//     // backgroundImg.style.setProperty("--w", "-786px");
-//     console.log("helo");
-//   },
-//   { once: true }
-//
-console.log(backgroundImg.getBoundingClientRect());

@@ -45,6 +45,7 @@
 
   /* background-color: white; */
 }
+
 .monk img {
   width: 120px;
   height: 160px;
@@ -90,11 +91,34 @@
   overflow-x: scroll;
 } */
 .bg-img {
+  position: relative;
   color: aliceblue;
   height: 97vh;
   /* animation: scroll 1s 1s ease-in-out; */
   /* animation-duration: 3s;
   animation-name: slidein; */
+}
+:root {
+  --left-0: 0%;
+  --left-100: -0%;
+}
+img.bg-img.active {
+  animation-duration: 1.5s;
+  animation-name: scroll;
+}
+@keyframes scroll {
+  0% {
+    /* transform: translateX(var(--left-0)); */
+    left: var(--left-0);
+  }
+
+  100% {
+    left: var(--left-100);
+    /* transform: translateX(var(--left-100)); */
+  }
+  /* 0% {
+      transform: translateX(-786px);
+    } */
 }
 .previous-btn {
   color: white;
@@ -121,21 +145,6 @@
   transition: transform 1s ease-in-out 1s;
 } */
 /* animation: like 2s 3s infinite; */
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(-786px);
-  }
-  100% {
-    transform: translateX(-786px);
-  }
-  /* 0% {
-    transform: translateX(-786px);
-  } */
-}
 
 @keyframes slidein {
   from {
