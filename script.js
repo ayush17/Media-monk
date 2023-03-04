@@ -24,12 +24,26 @@ const update = (evt, x) => {
 nextBtn.addEventListener("click", () => {
   const startX = Number(backgroundImg.dataset.x);
   const endX = startX - 75;
-  root.style.setProperty("--left-0", startX + "%");
-  root.style.setProperty("--left-100", endX + "%");
-  backgroundImg.removeEventListener("animationend", update);
-  backgroundImg.addEventListener("animationend", (evt) => update(evt, endX));
-  backgroundImg.dataset.x = endX;
-  backgroundImg.classList.add("active");
+  if (endX >= -225) {
+    root.style.setProperty("--left-0", startX + "%");
+    root.style.setProperty("--left-100", endX + "%");
+    backgroundImg.removeEventListener("animationend", update);
+    backgroundImg.addEventListener("animationend", (evt) => update(evt, endX));
+    backgroundImg.dataset.x = endX;
+    backgroundImg.classList.add("active");
+  }
 });
 
 // write logic of previous button
+previousBtn.addEventListener("click", () => {
+  const startX = Number(backgroundImg.dataset.x);
+  const endX = startX + 75;
+  if (endX <= 0) {
+    root.style.setProperty("--left-0", startX + "%");
+    root.style.setProperty("--left-100", endX + "%");
+    backgroundImg.removeEventListener("animationend", update);
+    backgroundImg.addEventListener("animationend", (evt) => update(evt, endX));
+    backgroundImg.dataset.x = endX;
+    backgroundImg.classList.add("active");
+  }
+});
