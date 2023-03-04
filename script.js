@@ -50,11 +50,7 @@ let previousBtn = document.querySelector(".previous-btn");
 let nextBtn = document.querySelector(".next-btn");
 
 carousel.classList.add("display-none");
-<<<<<<< HEAD
-const myTimeout = setTimeout(myGreeting, 10000);
-=======
 const myTimeout = setTimeout(myGreeting, 1000);
->>>>>>> Carousel
 function myGreeting() {
   container.classList.add("display-none");
   carousel.classList.remove("display-none");
