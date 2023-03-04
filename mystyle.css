@@ -7,6 +7,7 @@ body {
   overflow: hidden;
   background-color: black;
   color: white;
+  position: relative;
 }
 .container {
   position: relative;
@@ -85,7 +86,48 @@ body {
   width: 120px;
   height: 160px;
 }
-.vapour {
+.vapour{
+  /* background-color: brown; */
+  height: 170px;
+  width: 400px;
+  padding: 20px;
+  position: absolute;
+  top: 53%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* z-index: -100; */
+}
+.inner1{
+  background-color: white;
+  height: 6px;
+  border-radius: 50%;
+  width: 100%;
+  z-index: 200;
+  animation: animate 2s linear infinite;
+  filter: blur(28px);
+  animation-delay: calc(var(--i) * -0.01s);
+}
+@keyframes animate {
+  0%{
+    transform: translateX(0) ;
+    opacity: 0;
+  }
+  15%{
+opacity: 0.05;
+  }
+  50%{
+    transform: translateX(-60px) ;
+  }
+  100%{
+    transform: translateX(-120px) ;
+  }
+}
+
+
+/* .vapour {
   position: relative;
   display: flex;
   z-index: 0;
@@ -105,9 +147,9 @@ body {
   opacity: 0;
   filter: blur(10px);
   /* animation-delay: calc(var(--i) * -1.5s); */
-}
+} */
 
-@keyframes animate {
+/* @keyframes animate {
   0% {
     transform: translateX(-20px) translateY(119px) rotate(235deg) scale(6);
     filter: blur(8px);
@@ -138,7 +180,7 @@ body {
     height: 50px;
     width: 5px;
   }
-}
+} */
 
 @keyframes smoke {
   0% {
@@ -343,4 +385,43 @@ img.bg-img.active {
 }
 .logo {
   margin-left: 5px;
+}
+.monk-text {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: smallBig 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.padawon-text {
+  opacity: 0;
+  animation: moveRight 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes smallBig {
+  0% {
+    font-size: 0px;
+  }
+  50% {
+    font-size: 18px;
+    left: 50%;
+  }
+  100% {
+    left: 46%;
+  }
+}
+@keyframes moveRight {
+  0% {
+    left: 47%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 53%;
+    opacity: 1;
+  }
 }
